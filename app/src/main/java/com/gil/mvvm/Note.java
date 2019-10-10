@@ -15,10 +15,13 @@ public class Note {
 
     private int priority;
 
-    public Note(String title, String description, int priority) {
+    private int deposit;
+
+    public Note(String title, String description, int priority, int deposit) {
         this.title = title;
         this.description = description;
         this.priority = priority;
+        this.deposit = deposit;
     }
 
     public void setId(int id) {
@@ -40,4 +43,9 @@ public class Note {
     public int getPriority() {
         return priority;
     }
+
+    public int getDeposit() {
+        return deposit;
+    }
+
 }

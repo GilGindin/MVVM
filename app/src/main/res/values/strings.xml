@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MVVM</string>
+    <string name="snack_bar_text">Item removed</string>
+    <string name="snack_bar_undo">Undo</string>
+    <string name="vendors">סכום ספקים</string>
+    <string name="average_per_person">ממוצע לסועד</string>
+    <string name="btn_calculate">חשב</string>
+    <string name="item_fee">Fee :</string>
+    <string name="description_hint">Description</string>
+    <string name="title_hint">Title</string>
+    <string name="item_deposit">Deposit:</string>
+    <string name="item_left_to_pay">Left to pay :</string>
+    <string name="deposit">מיקדמה</string>
+    <string name="item_left_to_pay_static">נשאר לשלם</string>
 </resources>

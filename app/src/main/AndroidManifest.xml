@@ -10,9 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddEditNoteActivity"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".MainActivity"
+
+        <activity android:name=".StatisticClass"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/CustomTheme"/>
+        <!--<activity android:name=".CalculateActivity"-->
+            <!--android:parentActivityName=".MainActivity"-->
+            <!--android:theme="@style/CustomTheme"/>-->
+        <activity
+            android:name=".AddEditNoteActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/CustomTheme"/>
+        <activity
+            android:name=".MainActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

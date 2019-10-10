@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/calculate_all_notes"
+        android:title="חשב"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/statistic"
+        android:title="סטטיסטיקה"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/delete_all_notes"
-        android:title="Delete all notes"
-        app:showAsAction="never"/>
+        android:title="למחוק את כל הרשימה"
+        app:showAsAction="never" />
 </menu>

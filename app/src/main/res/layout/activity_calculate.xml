@@ -62,5 +62,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:background="@drawable/background_toast"
-        android:text="@string/btn_calculate" />
+        android:text="@string/btn_calculate"
+        android:textColor="@color/white"/>
 </LinearLayout>

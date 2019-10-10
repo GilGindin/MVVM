@@ -9,28 +9,37 @@ public class StatisticClass extends AppCompatActivity {
     private static final String TAG = "StatisticClass";
 
     private TextView text_view_priority_static, textview_deposit_static, textview_left_to_pay_static;
-    private int priority, deposit, leftToPay;
+    private int priority = 0, deposit = 0, leftToPay = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistic_class);
 
+        getSupportActionBar().setTitle("Go Back");
+
         text_view_priority_static = findViewById(R.id.text_view_priority_static);
         textview_deposit_static = findViewById(R.id.textview_deposit_static);
         textview_left_to_pay_static = findViewById(R.id.textview_left_to_pay_static);
 
-        Intent intent = getIntent();
-        priority = intent.getIntExtra(MainActivity.CALCAULATE_PRIORITY, 0);
-        deposit = intent.getIntExtra(MainActivity.CALCAULATE_DEPOSIT, 0);
-        leftToPay = priority - deposit;
+        if (getIntent().hasExtra(MainActivity.CALCAULATE_PRIORITY) && getIntent().hasExtra(MainActivity.CALCAULATE_DEPOSIT)) {
+            Intent intent = getIntent();
+            priority = intent.getIntExtra(MainActivity.CALCAULATE_PRIORITY, 0);
+            deposit = intent.getIntExtra(MainActivity.CALCAULATE_DEPOSIT, 0);
 
-        text_view_priority_static.setText("" + priority);
-        textview_deposit_static.setText("" + deposit);
-        if (deposit >= priority) {
-            textview_left_to_pay_static.setText("" + 0);
+            if (priority >= deposit) {
+                leftToPay = priority - deposit;
+                text_view_priority_static.setText("" + priority);
+                textview_deposit_static.setText("" + deposit);
+                textview_left_to_pay_static.setText("" + leftToPay);
+            }
+            if (deposit > priority) {
+                leftToPay = deposit - priority;
+                text_view_priority_static.setText("" + priority);
+                textview_deposit_static.setText("" + deposit);
+                textview_left_to_pay_static.setText("-" + leftToPay);
+            }
         }
-        textview_left_to_pay_static.setText("" + leftToPay);
     }
 
 }

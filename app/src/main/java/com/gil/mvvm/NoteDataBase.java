@@ -8,7 +8,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-@Database(entities = Note.class, version = 1, exportSchema = false)
+@Database(entities = Note.class, version = 2, exportSchema = false)
 public abstract class NoteDataBase extends RoomDatabase {
 
     private static NoteDataBase instance;
@@ -46,9 +46,9 @@ public abstract class NoteDataBase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            mNoteDao.insert(new Note("title 1", "description 1", 1));
-            mNoteDao.insert(new Note("title 2", "description 2", 2));
-            mNoteDao.insert(new Note("title 3", "description 3", 3));
+            mNoteDao.insert(new Note(" אולם", "הכנס שם", 1 , 0));
+            mNoteDao.insert(new Note("צלם", "הכנס שם", 1 , 0));
+            mNoteDao.insert(new Note("דיג'יי", "הכנס שם", 1 , 0 ));
             return null;
         }
     }
