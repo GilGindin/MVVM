@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".StatisticClass"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/CustomTheme"/>
+        <!--<activity android:name=".StatisticClass"-->
+            <!--android:parentActivityName=".MainActivity"-->
+            <!--android:theme="@style/CustomTheme"/>-->
         <!--<activity android:name=".CalculateActivity"-->
             <!--android:parentActivityName=".MainActivity"-->
             <!--android:theme="@style/CustomTheme"/>-->

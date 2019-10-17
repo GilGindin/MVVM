@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.TypedValue;
@@ -30,7 +29,6 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
     private EditText edit_text_title, edit_text_description, edit_text_deposit, edit_text_priority;
     private TextView textview_left_to_pay;
-    private Toolbar mToolbar;
     private int priority, deposit, overPay;
     private Animation animation1, animation2;
 
@@ -39,13 +37,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
 
-        edit_text_title = findViewById(R.id.edit_text_title);
-        edit_text_description = findViewById(R.id.edit_text_description);
-        edit_text_priority = findViewById(R.id.edit_text_picker);
-        edit_text_deposit = findViewById(R.id.edit_text_already_pay);
-        textview_left_to_pay = findViewById(R.id.textview_left_to_pay);
-
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+        setWidgets();
 
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_ID)) {
@@ -58,8 +50,21 @@ public class AddEditNoteActivity extends AppCompatActivity {
         } else {
             setTitle("Add Note");
         }
+
         textChangeListener();
         calculateDiffrence();
+    }
+
+    private void setWidgets() {
+
+        edit_text_title = findViewById(R.id.edit_text_title);
+        edit_text_description = findViewById(R.id.edit_text_description);
+        edit_text_priority = findViewById(R.id.edit_text_picker);
+        edit_text_deposit = findViewById(R.id.edit_text_already_pay);
+        textview_left_to_pay = findViewById(R.id.textview_left_to_pay);
+        textview_left_to_pay.setTextSize(30);
+        textview_left_to_pay.setTextColor(getResources().getColor(R.color.black));
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
     }
 
     private void textChangeListener() {
@@ -143,11 +148,11 @@ public class AddEditNoteActivity extends AppCompatActivity {
         toast.setView(layout);
 
         textview_left_to_pay.setTextColor(getResources().getColor(R.color.colorPrimary));
-        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(textview_left_to_pay, 25, 100, 5, TypedValue.COMPLEX_UNIT_SP);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(textview_left_to_pay, TextViewCompat.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+        TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(textview_left_to_pay, 25, 100, 2, TypedValue.COMPLEX_UNIT_SP);
         textview_left_to_pay.setGravity(Gravity.CENTER);
 
         createFadeInFadeOutAnimation();
-
         toast.show();
     }
 

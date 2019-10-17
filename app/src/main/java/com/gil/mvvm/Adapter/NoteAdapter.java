@@ -1,4 +1,4 @@
-package com.gil.mvvm;
+package com.gil.mvvm.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.gil.mvvm.Note;
+import com.gil.mvvm.R;
 
 import java.util.List;
 
@@ -22,6 +25,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteHolder> {
     public interface OnDeleteClickListener {
         void onDeleteClickListener(Note myNote);
     }
+
+//    public NoteAdapter(Context context) {
+//        mContext = context;
+//
+//    }
 
     public NoteAdapter(Context context, OnDeleteClickListener deleteClickListener, OnItemClickListener mOnItemClickListener) {
         mContext = context;

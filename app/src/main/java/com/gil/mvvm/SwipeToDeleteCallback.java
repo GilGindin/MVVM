@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
+import com.gil.mvvm.Adapter.NoteAdapter;
+
 public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback {
 
     private NoteAdapter mAdapter;
